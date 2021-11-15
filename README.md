@@ -59,7 +59,7 @@ An object type representing cache options
 
 | Property        |                  Type                  | description                                          | default                            |
 | --------------- | :------------------------------------: | ---------------------------------------------------- | ---------------------------------- |
-| initialData?    | (() => T &#124; Promise< T >) &#124; T | initial cache data or a function to be resolved from | undefined                          |
+| initialData?    | (() => T \| Promise< T >) &#124; T | initial cache data or a function to be resolved from | undefined                          |
 | revalidateFn?   | (() => T &#124; Promise< T >) &#124; T | revalidation data or a function to be resolved from  | undefined                          |
 | fallBackFn?     | (() => T &#124; Promise< T >) &#124; T | fallback value or a function to be resolved from     | undefined                          |
 | getterFn?       |       () => T &#124; undefined       | custom cache getter function                         | undefined                          |
@@ -74,7 +74,7 @@ An object cache revalidation options
 
 | Property            |                    Type                     | description                                                    | default      |
 | ------------------- | :-----------------------------------------: | -------------------------------------------------------------- | ------------ |
-| strategy?           |        linear &#124; exponential        | cache retry strategy                                           | 'linear'     |
+| strategy?           |        linear &#124; exponential        | cache retry strategy                                           | linear     |
 | interval?           |                  number                  | cache revalidation interval (ms)                               | 6000 (1 min) |
 | backOff?            |                  number                   | retry backoff time (ms)                                        | 300          |
 | exponentialBackoff? |                  number                   | retry exponential backoff time (ms) (for exponential strategy) | 10           |
