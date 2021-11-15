@@ -1,4 +1,4 @@
-![PUPPY](https://github.com/ragrag/cache-puppey/blob/master/meta/puppy.png?raw=true)
+<img src="https://github.com/ragrag/cache-puppy/blob/main/meta/puppy.png" alt="alt text" width="450" height="450">
 
 [![PR's Welcome][pr-welcoming-image]][pr-welcoming-url]
 
@@ -59,11 +59,11 @@ An object type representing cache options
 
 | Property        |                  Type                  | description                                          | default                            |
 | --------------- | :------------------------------------: | ---------------------------------------------------- | ---------------------------------- |
-| initialData?    | `(() => T &#124; Promise<T>) &#124; T` | initial cache data or a function to be resolved from | undefined                          |
-| revalidateFn?   | `(() => T &#124; Promise<T>) &#124; T` | revalidation data or a function to be resolved from  | undefined                          |
-| fallBackFn?     | `(() => T &#124; Promise<T>) &#124; T` | fallback value or a function to be resolved from     | undefined                          |
-| getterFn?       |       `() => T &#124; undefined`       | custom cache getter function                         | undefined                          |
-| setterFn?       |            `(data) => void`            | custom cache setter function                         | undefined                          |
+| initialData?    | (() => T &#124; Promise<T>) &#124; T | initial cache data or a function to be resolved from | undefined                          |
+| revalidateFn?   | (() => T &#124; Promise<T>) &#124; T | revalidation data or a function to be resolved from  | undefined                          |
+| fallBackFn?     | (() => T &#124; Promise<T>) &#124; T | fallback value or a function to be resolved from     | undefined                          |
+| getterFn?       |       () => T &#124; undefined       | custom cache getter function                         | undefined                          |
+| setterFn?       |            (data) => void            | custom cache setter function                         | undefined                          |
 | revalidateOpts? |  [RevalidateOpts<T>](#RevalidateOpts)  | revalidation options                                 | defaultCacheOptions.revalidateOpts |
 
 ### **RevalidateOpts**
@@ -74,13 +74,13 @@ An object cache revalidation options
 
 | Property            |                    Type                     | description                                                    | default      |
 | ------------------- | :-----------------------------------------: | -------------------------------------------------------------- | ------------ |
-| strategy?           |        `linear` &#124; `exponential`        | cache retry strategy                                           | 'linear'     |
-| interval?           |                  `number`                   | cache revalidation interval (ms)                               | 6000 (1 min) |
-| backOff?            |                  `number`                   | retry backoff time (ms)                                        | 300          |
-| exponentialBackoff? |                  `number`                   | retry exponential backoff time (ms) (for exponential strategy) | 10           |
-| retries             |                  `number`                   | number of maximum retries                                      | 3            |
-| onSuccess           |   ` (cache) => Promise<void> &#124; void`   | callback on revalidation success                               | undefined    |
-| onRetriesReached    | `(cache, err) => Promise<void> &#124; void` | callback on maximum retries reached                            | undefined    |
+| strategy?           |        linear &#124; exponential        | cache retry strategy                                           | 'linear'     |
+| interval?           |                  number                  | cache revalidation interval (ms)                               | 6000 (1 min) |
+| backOff?            |                  number                   | retry backoff time (ms)                                        | 300          |
+| exponentialBackoff? |                  number                   | retry exponential backoff time (ms) (for exponential strategy) | 10           |
+| retries             |                  number                   | number of maximum retries                                      | 3            |
+| onSuccess           |   (cache) => Promise<void> &#124; void   | callback on revalidation success                               | undefined    |
+| onRetriesReached    | (cache, err) => Promise<void> &#124; void | callback on maximum retries reached                            | undefined    |
 
 ### **Todo**
 
