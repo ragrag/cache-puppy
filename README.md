@@ -51,20 +51,29 @@ console.log(cache.get()); // cached pets
 
 ### **CachePuppy<T>(options: CacheOpts)**
 
+#### methods
+
+| Property   |             Type             | description                |
+| ---------- | :--------------------------: | -------------------------- |
+| get        |          `() => T`           | gets cache value           |
+| set        | `(data: T) => Promise<void>` | sets cache value           |
+| revalidate |   `() => Promise< void >`    | revalidates cache          |
+| teardown   |        `() => void `         | gracfully tears down cache |
+
 ### **CacheOpts**
 
 An object type representing cache options
 
 #### properties
 
-| Property        |                  Type                  | description                                          | default                            |
-| --------------- | :------------------------------------: | ---------------------------------------------------- | ---------------------------------- |
-| initialData?    | `(() => T \| Promise< T >) \| T` | initial cache data or a function to be resolved from | `undefined`                          |
-| revalidateFn?   | `(() => T \| Promise< T >) \| T` | revalidation data or a function to be resolved from  | `undefined`                          |
-| fallBackFn?     | `(() => T \| Promise< T >) \| T` | fallback value or a function to be resolved from     | `undefined`                          |
-| getterFn?       |       `() => T \| undefined`      | custom cache getter function                         | `undefined`                          |
-| setterFn?       |            `(data) => void`            | custom cache setter function                         | `undefined`                          |
-| revalidateOpts? |  [RevalidateOpts<T>](#RevalidateOpts)  | revalidation options                                 | defaultCacheOptions.revalidateOpts |
+| Property        |                 Type                 | description                                          | default                            |
+| --------------- | :----------------------------------: | ---------------------------------------------------- | ---------------------------------- |
+| initialData?    |   `(() => T \| Promise< T >) \| T`   | initial cache data or a function to be resolved from | `undefined`                        |
+| revalidateFn?   |   `(() => T \| Promise< T >) \| T`   | revalidation data or a function to be resolved from  | `undefined`                        |
+| fallBackFn?     |   `(() => T \| Promise< T >) \| T`   | fallback value or a function to be resolved from     | `undefined`                        |
+| getterFn?       |        `() => T \| undefined`        | custom cache getter function                         | `undefined`                        |
+| setterFn?       |           `(data) => void`           | custom cache setter function                         | `undefined`                        |
+| revalidateOpts? | [RevalidateOpts<T>](#RevalidateOpts) | revalidation options                                 | defaultCacheOptions.revalidateOpts |
 
 ### **RevalidateOpts**
 
@@ -72,14 +81,14 @@ An object cache revalidation options
 
 #### properties
 
-| Property            |                    Type                     | description                                                    | default      |
-| ------------------- | :-----------------------------------------: | -------------------------------------------------------------- | ------------ |
-| strategy?           |        `linear \| exponential`        | cache retry strategy                                           | `linear`     |
-| interval?           |                  `number`                  | cache revalidation interval (ms)                               | `6000` (1 min) |
-| backOff?            |                  `number`                   | retry backoff time (ms)                                        | `300`          |
-| exponentialBackoff? |                  `number`                  | retry exponential backoff time (ms) (for exponential strategy) | `10`           |
-| retries             |                  `number`                   | number of maximum retries                                      | `3`            |
-| onSuccess           |   `(cache) => Promise< void > \| void`   | callback on revalidation success                               | `undefined`    |
+| Property            |                   Type                    | description                                                    | default        |
+| ------------------- | :---------------------------------------: | -------------------------------------------------------------- | -------------- |
+| strategy?           |          `linear \| exponential`          | cache retry strategy                                           | `linear`       |
+| interval?           |                 `number`                  | cache revalidation interval (ms)                               | `6000` (1 min) |
+| backOff?            |                 `number`                  | retry backoff time (ms)                                        | `300`          |
+| exponentialBackoff? |                 `number`                  | retry exponential backoff time (ms) (for exponential strategy) | `10`           |
+| retries             |                 `number`                  | number of maximum retries                                      | `3`            |
+| onSuccess           |   `(cache) => Promise< void > \| void`    | callback on revalidation success                               | `undefined`    |
 | onRetriesReached    | `(cache, err) => Promise< void > \| void` | callback on maximum retries reached                            | `undefined`    |
 
 ### **Todo**

@@ -78,7 +78,7 @@ class CachePuppy<T> {
     return this.cache;
   }
 
-  private teardown = () => {
+  public teardown = (): void => {
     if (this.revalidationInterval) {
       clearInterval(this.revalidationInterval);
     }
