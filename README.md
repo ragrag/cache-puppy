@@ -1,4 +1,4 @@
-![PUPPY](https://github.com/ragrag/cache-puppey/blob/master/meta/puppy.png?raw=true)
+![PUPPY](https://github.com/ragrag/cache-puppy/blob/main/meta/puppy.png)
 
 [![PR's Welcome][pr-welcoming-image]][pr-welcoming-url]
 
