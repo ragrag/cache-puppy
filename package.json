@@ -1,6 +1,6 @@
 {
   "name": "cache-puppy",
-  "version":"1.0.0",
+  "version":"1.0.1",
   "description": "lightweight cache-revalidate",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -13,7 +13,6 @@
   "engines": {
     "node": "12"
   },
-  "main": "dist/index.js",
   "devDependencies": {
     "@types/node": "^14.14.37",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
