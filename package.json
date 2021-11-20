@@ -1,33 +1,46 @@
 {
   "name": "cache-puppy",
-  "version":"1.0.4",
+  "version": "1.0.4",
   "description": "lightweight cache-revalidate",
-  "main": "build/index.js",
+  "main": "build/index.cjs.js",
+  "module": "build/index.esm.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build && node dist/index.js",
-    "dev": "nodemon src/index.ts",
+    "build": "esdx",
+    "dev": "esdx --watch",
     "lint": "eslint --ext .js,.ts ."
-  },
-  "engines": {
-    "node": "12"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
+    "esdx": "^0.1.0",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "prettier": "^2.2.1",
-    "prettier-eslint": "^12.0.0",
-    "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ragrag/cache-puppy.git"
   },
-  "files": ["build/**/*"]
+  "files": [
+    "build/**/*"
+  ],
+  "esdx": {
+    "entries": [
+      {
+        "source": "src/index.ts",
+        "format": "esm",
+        "output": "build/index.esm.js",
+        "types": "build/index.d.ts"
+      },
+      {
+        "source": "src/index.ts",
+        "format": "cjs",
+        "output": "build/index.cjs.js"
+      }
+    ]
+  }
 }
