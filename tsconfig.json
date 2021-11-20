@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "es6", "es2017", "esnext.asynciterable","es2020"],
+    "lib": ["dom", "es6", "es2017", "esnext.asynciterable", "es2020"],
     "module": "commonjs",
     "declaration": true,
     "noImplicitReturns": true,
@@ -10,12 +10,8 @@
     "sourceMap": true,
     "strict": true,
     "moduleResolution": "node",
-    "target": "es6"
+    "target": "ES2017"
   },
   "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
-
-
