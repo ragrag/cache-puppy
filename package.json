@@ -1,6 +1,6 @@
 {
   "name": "cache-puppy",
-  "version": "1.0.4",
+  "version":"1.0.6",
   "description": "lightweight cache-revalidate",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
